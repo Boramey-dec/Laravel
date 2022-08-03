@@ -1,15 +1,3 @@
-#This is a project we do on team about logistic between sender and receiver.
-
-#******* How to run this project 
-#\******** First we want you to know that we made it on laravel homestead.
-         \**** clone this code ****
-\******** 1. cd homestead
-\******** 2. vagrant up
-\******** 3. vagrant provision 
-\******** 4. vagrant ssh
-\******** 5. npm install
-\******** 6. npm run dev/ npm run build
-
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
