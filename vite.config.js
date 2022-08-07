@@ -21,8 +21,9 @@ export default defineConfig({
         }),
     ],
     resolve: {
-        alias: {
+        aliases: {
             vue: 'vue/dist/vue.esm-bundler.js',
+            // HTML: 'Collective\Html\HtmlFacade::class',
         },
     },
 });

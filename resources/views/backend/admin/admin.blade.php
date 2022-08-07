@@ -1,9 +1,9 @@
-@extends('backend.admin.layout.dashboard')
+@extends('backend.admin.layout.index')
 
 @section('contents')
 
     <!-- MAIN CONTENT-->
-    <div class="main-content">
+
         <div class="section__content section__content--p30">
             <div class="container-fluid">
                 <div class="row">
@@ -20,7 +20,7 @@
                         <div class="overview-item overview-item--c1">
                             <div class="overview__inner">
                                 <div class="overview-box clearfix">
-                                    
+
                                     <div class="icon">
                                         <i class="zmdi zmdi-account-o"></i>
                                     </div>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-              
+
                 <div class="row">
                     <div class="col-lg-9">
                         <h2 class="title-1 m-b-25">Earnings By Items</h2>
@@ -106,11 +106,11 @@
                                         <th class="text-right">total</th>
                                     </tr>
                                 </thead>
-                              
+
                             </table>
                         </div>
                     </div>
-                  
+
                 </div>
                 <div class="row">
                     <div class="col-lg-6">
@@ -183,7 +183,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="row">
                     <div class="col-md-13"></div>
@@ -194,7 +194,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <!-- END MAIN CONTENT-->
-  
+
 @endsection

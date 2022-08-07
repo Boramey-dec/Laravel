@@ -22,9 +22,9 @@
                         <i class='bx bx-user'></i>Manage User</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="/employee">Employee</a>
+                            <a href="/admin/employees">Employee</a>
                         </li>
-                        
+
                     </ul>
                 </li>
                 <li>
@@ -43,10 +43,10 @@
                 <li>
                     <a href="/manageP">
                         <i class='bx bxs-component'></i>Manage Parcels</a>
-                      
+
                 </li>
-                
-               
+
+
             </ul>
         </nav>
     </div>

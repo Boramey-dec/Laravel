@@ -31,7 +31,7 @@
                         <i class='bx bx-user'></i>Manage User</a>
                     <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                         <li>
-                            <a href="/employee">Employee</a>
+                            <a href="/admin/employees">Employee</a>
                         </li>
                     </ul>
                 </li>
@@ -52,9 +52,9 @@
                     <a href="/manageP">
                         <i class='bx bxs-component'></i>Manage Parcels</a>
                 </li>
-                
-                
-               
+
+
+
             </ul>
         </div>
     </nav>
