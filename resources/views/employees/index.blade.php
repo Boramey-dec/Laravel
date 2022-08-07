@@ -1,10 +1,64 @@
 @extends('backend.admin.layout.index')
 
-@section('scripts')
-{{ HTML::script('js/form.js') }}
-@stop
 
 @section('content')
+
+{{-- <script src="{{ asset('js/form.js')}}"></script> --}}
+<script>
+
+$(document).ready(function() {
+    // Activate tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Select/Deselect checkboxes
+    var checkbox = $('table tbody input[type="checkbox"]');
+    $("#selectAll").click(function() {
+        if (this.checked) {
+            checkbox.each(function() {
+                this.checked = true;
+            });
+        } else {
+            checkbox.each(function() {
+                this.checked = false;
+            });
+        }
+    });
+    checkbox.click(function() {
+        if (!this.checked) {
+            $("#selectAll").prop("checked", false);
+
+        }
+    });
+
+});
+
+function delete1(){
+
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Select/Deselect checkboxes
+    var checkbox = $('table tbody input[type="checkbox"]');
+    console.log(checkbox)
+    if (!this.checked) {
+        let elements = document.getElementById("selectAll").checked;
+        {
+            if(elements){
+                // code here
+
+            }else{
+
+            }
+        }
+            console.log(elements)
+    }
+
+
+
+}
+
+</script>
+
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
@@ -17,8 +71,10 @@
                             <a class="btn btn-success" href="{{ route('employees.create') }}"><i
                                     class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
                             {{-- @method('DELETE') --}}
-                            <a href="" class="btn btn-danger"><i class="material-icons">&#xE15C;</i>
+                            <a class="btn btn-danger" onclick= delete1()  href="{{ route('employees.deleteAll', 0) }}"><i class="material-icons">&#xE15C;</i>
                                 <span>Delete</span></a>
+                                @csrf
+                                @method('DELETE')
                         </div>
                     </div>
                 </div>
@@ -54,7 +110,7 @@
                             <tr>
                                 <td>
                                     <span class="custom-checkbox">
-                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                        <input type="checkbox" id="checkbox1" name="options[]" value="{{ $employee->id }}">
                                         <label for="checkbox1"></label>
                                     </span>
                                 </td>

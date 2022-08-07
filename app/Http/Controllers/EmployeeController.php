@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use HTML;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 
@@ -111,8 +111,18 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
+
+        //dd($employee->id);
         $employee->delete();
         return redirect()->route('employees.index')
                         ->with('success','Employee deleted successfully');
+
+    }
+
+    public function deleteAll($id){
+        if($id){
+            dd($id);
+            return 0;
+        }
     }
 }

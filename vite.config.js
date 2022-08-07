@@ -23,7 +23,8 @@ export default defineConfig({
     resolve: {
         aliases: {
             vue: 'vue/dist/vue.esm-bundler.js',
-            // HTML: 'Collective\Html\HtmlFacade::class',
+            HTML: 'Collective\Html\HtmlFacade::class',
+            Form: 'Collective\Html\FormFacade::class'
         },
     },
 });
