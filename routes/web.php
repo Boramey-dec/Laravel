@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\BranchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,34 +26,38 @@ Route::get('/', function () {
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Normal Users Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:user'])->group(function () {
-  
+
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:admin'])->group(function () {
-  
-    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+    Route::get('/admin', [HomeController::class, 'adminHome'])->name('admin');
+    Route::resource('/admin/employee', EmployeeController::class);
+    Route::resource('/admin/location', LocationController::class);
+    Route::resource('/admin/branch', BranchController::class);
+
+
 });
-  
+
 /*------------------------------------------
 --------------------------------------------
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-  
+
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager');
     Route::get('/manager', function () {
         return view('backend.manager.manager');
@@ -71,6 +78,5 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     // Route::resource('manager/print ', UserController::class);
     // Route::resource('manager/manageParcels', UserController::class);
     // Route::resource('manager/tracking', UserController::class);
-   
+
 });
- 

@@ -33,9 +33,9 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-        return view('adminHome');
+        return view('backend.admin.adminDashboard');
     }
-   
+
     /**
      * Show the application dashboard.
      *
